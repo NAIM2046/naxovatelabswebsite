@@ -1,9 +1,12 @@
-import Image from "next/image";
+import ContactForm from "@/components/landingpage/ContactForm";
+import HeroSection from "@/components/landingpage/HeroSection";
+
 
 export default function Home() {
   return (
     <div>
-      <h1>naxovatelabs is comming</h1>
+      <HeroSection />
+      <ContactForm />
     </div>
   );
 }
