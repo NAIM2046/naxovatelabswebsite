@@ -1,11 +1,16 @@
 import ContactForm from "@/components/landingpage/ContactForm";
 import HeroSection from "@/components/landingpage/HeroSection";
-
+import ProjectsSection from "@/components/landingpage/ProjectsSection";
+import ServicesSection from "@/components/landingpage/ServicesSection";
+import TeamSection from "@/components/landingpage/TeamSection";
 
 export default function Home() {
   return (
     <div>
       <HeroSection />
+      <ServicesSection />
+      <ProjectsSection />
+      <TeamSection />
       <ContactForm />
     </div>
   );
