@@ -40,9 +40,9 @@ const projects = [
   },
 ];
 
-const ProjectsSection = () => {
+const OurSolutions = () => {
   return (
-    <section className=" py-6 px-6 md:px-16 transition-colors duration-500">
+    <section className="  py-6 px-6 md:px-16 transition-colors duration-500">
       {/* Title */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -140,4 +140,4 @@ const ProjectsSection = () => {
   );
 };
 
-export default ProjectsSection;
+export default OurSolutions;

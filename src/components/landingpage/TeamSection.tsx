@@ -70,12 +70,12 @@ const TeamSection = () => {
             viewport={{ once: true }}
           >
             <Card className="group  rounded-2xl overflow-hidden hover:border-cyan-400 hover:shadow-cyan-500/30 transition-all duration-300">
-              <div className="relative w-full h-60 overflow-hidden">
+              <div className="relative w-full h-80 overflow-hidden">
                 <Image
                   src={member.image}
                   alt={member.name}
                   width={400}
-                  height={400}
+                  height={350}
                   className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
