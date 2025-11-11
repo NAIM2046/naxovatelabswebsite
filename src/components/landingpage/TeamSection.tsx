@@ -1,11 +1,12 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Phone, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import gsap from "gsap";
 
 const teamMembers = [
   {
@@ -16,7 +17,7 @@ const teamMembers = [
     email: "naim@example.com",
     phone: "+88017XXXXXXXX",
     image: "https://i.ibb.co.com/pBBs7N3b/naim.jpg",
-    study:"IIT, Jahangirnagar University"
+    study: "IIT, Jahangirnagar University",
   },
   {
     id: 2,
@@ -26,7 +27,7 @@ const teamMembers = [
     email: "jakir@example.com",
     phone: "+88018XXXXXXXX",
     image: "https://i.ibb.co.com/mC0Z3DKD/jakir.jpg",
-    study:"CSE, Jahangirnagar University"
+    study: "CSE, Jahangirnagar University",
   },
   {
     id: 3,
@@ -36,11 +37,24 @@ const teamMembers = [
     email: "humaonkabir2003@gmail.com",
     phone: "+8801743637814",
     image: "https://i.ibb.co.com/CKZHz6JY/kabir-resume.jpg",
-    study:"IIT, Jahangirnagar University"
+    study: "IIT, Jahangirnagar University",
   },
 ];
 
 const TeamSection = () => {
+  const rocketRef = useRef<HTMLSpanElement | null>(null);
+
+  useEffect(() => {
+    if (rocketRef.current) {
+      gsap.to(rocketRef.current, {
+        y: -8, // move up slightly
+        repeat: -1, // infinite loop
+        yoyo: true, // come back down
+        ease: "power1.inOut",
+        duration: 0.8, // speed
+      });
+    }
+  }, []);
   return (
     <section className=" py-6 px-6 md:px-16">
       {/* Title */}
@@ -88,9 +102,7 @@ const TeamSection = () => {
                 <p className="text-black dark:text-white">{member.role}</p>
                 <p className="text-black dark:text-white">{member.study}</p>
 
-                <p className=" text-sm mt-1">
-                  {member.experience}
-                </p>
+                <p className=" text-sm mt-1">{member.experience}</p>
 
                 <div className="flex items-center justify-center gap-4 mt-4 ">
                   <a
@@ -130,9 +142,12 @@ const TeamSection = () => {
         <Button
           size="lg"
           className="bg-gradient-to-r from-cyan-500 to-purple-600 text-white hover:opacity-90 transition-all rounded-full px-8 py-6 text-lg"
-          onClick={() => window.open("/join", "_self")}
+          onClick={() => window.open("/contact", "_self")}
         >
-          🚀 Join Our Team
+          <span ref={rocketRef} className="inline-block mr-2">
+            🚀
+          </span>
+          Join Our Team
         </Button>
       </motion.div>
     </section>

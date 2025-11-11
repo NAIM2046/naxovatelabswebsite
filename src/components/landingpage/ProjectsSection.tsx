@@ -131,7 +131,7 @@ const ProjectsSection = () => {
         <Button
           size="lg"
           className="bg-gradient-to-r from-cyan-500 to-purple-600 text-white hover:opacity-90 transition-all rounded-full px-8 py-6 text-lg"
-          onClick={() => window.open("/projects", "_self")}
+          onClick={() => window.open("/solutions", "_self")}
         >
           🚀 View All Projects
         </Button>

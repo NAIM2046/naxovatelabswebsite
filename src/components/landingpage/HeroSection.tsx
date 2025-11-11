@@ -40,7 +40,7 @@ const HeroSection = () => {
               variant="outline"
               className="border-cyan-400 text-cyan-400 hover:bg-cyan-500 hover:text-white"
             >
-              <Link href="/services">Our Services</Link>
+              <Link href="/solutions">Our Services</Link>
             </Button>
           </div>
         </motion.div>
