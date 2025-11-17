@@ -10,7 +10,7 @@ import BackToTopButton from "../utilities/BackToTopButton";
 const Footer = () => {
   return (
     <>
-    <footer className="relative overflow-hidden">
+    <footer className="relative overflow-hidden py-6">
       {/* Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-950 via-purple-900 to-gray-950" />
 

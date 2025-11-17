@@ -10,7 +10,7 @@ import heroAnimation from "@/assets/lottiefile/Business Analysis.json"; // your 
 const HeroSection = () => {
   return (
     <section className="relative overflow-hidden  text-white  md:py-6">
-      <div className="max-w-7xl mx-auto px-6 md:px-16 flex  md:flex-row items-center justify-between flex-col-reverse">
+      <div className="max-w-7xl mx-auto   flex  md:flex-row items-center justify-between flex-col-reverse">
         {/* Left side content */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}

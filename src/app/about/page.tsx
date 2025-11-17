@@ -42,7 +42,7 @@ const About = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="  py-6 px-6 md:px-16">
+    <section ref={sectionRef} className="max-w-7xl mx-auto px-6 md:px-16 py-10">
       {/* Hero Section */}
       <div className="text-center mb-16 fade-up">
         <AnimatedTitle></AnimatedTitle>

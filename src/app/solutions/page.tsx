@@ -6,14 +6,16 @@ import Image from "next/image";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Eye, Star } from "lucide-react";
+import wallet from "@/assets/images/wallet.jpeg";
+import TourImg from "@/assets/images/tour.png";
 
 const projects = [
   {
     id: 1,
     title: "Tour Management System",
     desc: "A full-stack travel booking web app with user dashboard, admin panel, and live map integration using Next.js and MongoDB.",
-    image: "/images/tour.png",
-    live: "https://tour-delta-rose.vercel.app/",
+    image: TourImg,
+    live: "https://sixtour.vercel.app",
     details: "#",
     reviews: 32,
     rating: 4.8,
@@ -30,19 +32,39 @@ const projects = [
   },
   {
     id: 3,
-    title: "Smart Inventory System",
-    desc: "An ERP-based inventory & accounting system with role-based access, report generation, and live data visualization.",
-    image: "/projects/inventory.png",
-    live: "https://inventory-smart.vercel.app",
+    title: "DIGI Wallet",
+    desc: "A secure, role-based, and user-friendly frontend application for a Digital Wallet System — inspired by popular platforms like bKash and Nagad. This project enables Users, Agents, and Admins to perform financial operations, manage wallets, and monitor transactions through an intuitive dashboard interface",
+    image: wallet,
+    live: "https://digiwallet-front.vercel.app",
     details: "#",
     reviews: 26,
     rating: 4.7,
   },
+  {
+    id: 4,
+    title: "RDF Management System",
+    desc: "A comprehensive Refugee Data & Food Management System with role-based access, real-time tracking, and reporting features to streamline aid distribution.",
+    image: "https://i.ibb.co/7Y6S5YV/refugee.png",
+    live: "https://rdf-management.vercel.app",
+    details: "#",
+    reviews: 18,
+    rating: 4.6,
+  },
+  {
+    id: 5,
+    title: "Volunteer Management Platform",
+    desc: "A full-featured Volunteer Management Platform with event scheduling, volunteer tracking, and communication tools to enhance community engagement.",
+    image: "https://i.ibb.co/0Jmshvb/volunteer.png",
+    live: "https://volunteer-connect.vercel.app", 
+    details: "#",
+    reviews: 22,
+    rating: 4.7,
+  }
 ];
 
 const OurSolutions = () => {
   return (
-    <section className="  py-6 px-6 md:px-16 transition-colors duration-500">
+    <section className="max-w-7xl mx-auto   transition-colors duration-500 py-6 ">
       {/* Title */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -119,23 +141,6 @@ const OurSolutions = () => {
           </motion.div>
         ))}
       </div>
-
-      {/* View All Button */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-        viewport={{ once: true }}
-        className="text-center mt-14"
-      >
-        <Button
-          size="lg"
-          className="bg-gradient-to-r from-cyan-500 to-purple-600 text-white hover:opacity-90 transition-all rounded-full px-8 py-6 text-lg"
-          onClick={() => window.open("/solutions", "_self")}
-        >
-          🚀 View All Projects
-        </Button>
-      </motion.div>
     </section>
   );
 };
