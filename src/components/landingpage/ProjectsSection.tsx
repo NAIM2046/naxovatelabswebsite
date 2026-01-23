@@ -8,10 +8,42 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, Eye, Star } from "lucide-react";
 import wallet from "@/assets/images/wallet.jpeg";
 import TourImg from "@/assets/images/tour.png";
-
+import Rdf from "@/assets/images/rdf.png";
+import TourBuddy from "@/assets/images/tourbuddy.png";
+import CouponImg from "@/assets/images/coupon.png";
 const projects = [
   {
     id: 1,
+    title: "TourBuddy – Tour Management Software",
+    desc: "A complete end-to-end tour management system with booking automation, admin dashboard, package management, and scalable architecture for travel agencies.",
+    image: TourBuddy,
+    live: "https://tourbuddy-client-ppt5.vercel.app",
+    details: "/case-studies/tourbuddy",
+    reviews: 48,
+    rating: 4.9,
+  },
+  {
+    id: 2,
+    title: "RDF Bangladesh – NGO & Corporate Website",
+    desc: "A professional corporate & NGO website with dynamic content management, responsive UI, and modern design to represent organizational activities and impact.",
+    image: Rdf,
+    live: "https://rdfbd.org",
+    details: "/case-studies/rdf-bd",
+    reviews: 36,
+    rating: 4.8,
+  },
+  {
+    id: 3,
+    title: "Coupon Opal – Coupon & Deals Platform",
+    desc: "A modern SaaS-based coupon and deals platform featuring offer listings, responsive UI, and scalable frontend architecture built for growth.",
+    image: CouponImg,
+    live: "https://coupon-opal.vercel.app",
+    details: "/case-studies/coupon-opal",
+    reviews: 29,
+    rating: 4.7,
+  },
+  {
+    id: 4,
     title: "Tour Management System",
     desc: "A full-stack travel booking web app with user dashboard, admin panel, and live map integration using Next.js and MongoDB.",
     image: TourImg,
@@ -21,7 +53,7 @@ const projects = [
     rating: 4.8,
   },
   {
-    id: 2,
+    id: 5,
     title: "Education Platform -Safwan chemistry Solution",
     desc: "A modern e-learning platform offering video lectures, quizzes, and progress tracking for students, built with React and Node.js.",
     image: "https://i.ibb.co.com/DHw2yMnq/chemistry.png",
@@ -31,7 +63,7 @@ const projects = [
     rating: 4.9,
   },
   {
-    id: 3,
+    id: 6,
     title: "DIGI Wallet",
     desc: "A secure, role-based, and user-friendly frontend application for a Digital Wallet System — inspired by popular platforms like bKash and Nagad. This project enables Users, Agents, and Admins to perform financial operations, manage wallets, and monitor transactions through an intuitive dashboard interface",
     image: wallet,

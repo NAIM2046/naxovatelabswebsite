@@ -85,27 +85,28 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold text-white mb-3">Contact</h3>
             <p className="text-sm  mb-3">
-              Dhaka, Bangladesh <br />
+             
+Jahangirnagar University ,Shaheed Tajuddin Ahmad Hall ,Block-B, Level-2, Savar,Dhaka, Bangladesh <br />
               <Link
-                href="mailto:info@nexovatelabs.com"
+                href="mailto:nextinnovationlabs@gmail.com"
                 className="hover:text-cyan-400"
               >
-                info@nexovatelabs.com
+                nextinnovationlabs@gmail.com
               </Link>
             </p>
 
             <div className="flex justify-center md:justify-start space-x-4 mt-3">
-              <Link href="#" className="hover:text-cyan-400 transition-colors">
+              <Link href="https://www.facebook.com/share/1G4ZJhxuco" target="_blank" className="hover:text-cyan-400 transition-colors">
                 <Facebook size={20} />
               </Link>
               <Link href="#" className="hover:text-cyan-400 transition-colors">
                 <Twitter size={20} />
               </Link>
-              <Link href="#" className="hover:text-cyan-400 transition-colors">
+              <Link href="https://linkedin.com/in/humaonkabir12" target="_blank" className="hover:text-cyan-400 transition-colors">
                 <Linkedin size={20} />
               </Link>
               <Link
-                href="mailto:info@nexovatelabs.com"
+                href="mailto:nextinnovationlabs@gmail.com"
                 className="hover:text-cyan-400 transition-colors"
               >
                 <Mail size={20} />

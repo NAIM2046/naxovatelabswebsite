@@ -26,8 +26,8 @@ const teamMembers = [
   {
     id: 2,
     name: "Jakir Hossain",
-    role: "Backend Developer",
-    experience: "2+ Years Experience",
+    role: "Fullstack Developer",
+    experience: "2.5+ Years Experience",
     email: "mdjakir.cse.ju@gmail.com",
     phone: "+8801605-043849",
     image: jakirImg,
@@ -37,8 +37,8 @@ const teamMembers = [
   {
     id: 3,
     name: "Humaon Kabir",
-    role: "UI/UX Designer & Frontend",
-    experience: "2+ Years Experience",
+    role: "UI/UX Designer Fullstack Developer",
+    experience: "2.5+ Years Experience",
     email: "humaonkabir2003@gmail.com",
     phone: "+8801743-637814",
     image: kabirImg,
