@@ -6,20 +6,54 @@ import Image from "next/image";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Eye, Star } from "lucide-react";
-
+import wallet from "@/assets/images/wallet.jpeg";
+import TourImg from "@/assets/images/tour.png";
+import Rdf from "@/assets/images/rdf.png";
+import TourBuddy from "@/assets/images/tourbuddy.png";
+import CouponImg from "@/assets/images/coupon.png";
 const projects = [
   {
     id: 1,
+    title: "TourBuddy – Tour Management Software",
+    desc: "A complete end-to-end tour management system with booking automation, admin dashboard, package management, and scalable architecture for travel agencies.",
+    image: TourBuddy,
+    live: "https://tourbuddy-client-ppt5.vercel.app",
+    details: "/case-studies/tourbuddy",
+    reviews: 48,
+    rating: 4.9,
+  },
+  {
+    id: 2,
+    title: "RDF Bangladesh – NGO & Corporate Website",
+    desc: "A professional corporate & NGO website with dynamic content management, responsive UI, and modern design to represent organizational activities and impact.",
+    image: Rdf,
+    live: "https://rdfbd.org",
+    details: "/case-studies/rdf-bd",
+    reviews: 36,
+    rating: 4.8,
+  },
+  {
+    id: 3,
+    title: "Coupon Opal – Coupon & Deals Platform",
+    desc: "A modern SaaS-based coupon and deals platform featuring offer listings, responsive UI, and scalable frontend architecture built for growth.",
+    image: CouponImg,
+    live: "https://coupon-opal.vercel.app",
+    details: "/case-studies/coupon-opal",
+    reviews: 29,
+    rating: 4.7,
+  },
+  {
+    id: 4,
     title: "Tour Management System",
     desc: "A full-stack travel booking web app with user dashboard, admin panel, and live map integration using Next.js and MongoDB.",
-    image: "/images/tour.png",
-    live: "https://tour-delta-rose.vercel.app/",
+    image: TourImg,
+    live: "https://sixtour.vercel.app",
     details: "#",
     reviews: 32,
     rating: 4.8,
   },
   {
-    id: 2,
+    id: 5,
     title: "Education Platform -Safwan chemistry Solution",
     desc: "A modern e-learning platform offering video lectures, quizzes, and progress tracking for students, built with React and Node.js.",
     image: "https://i.ibb.co.com/DHw2yMnq/chemistry.png",
@@ -29,11 +63,11 @@ const projects = [
     rating: 4.9,
   },
   {
-    id: 3,
-    title: "Smart Inventory System",
-    desc: "An ERP-based inventory & accounting system with role-based access, report generation, and live data visualization.",
-    image: "/projects/inventory.png",
-    live: "https://inventory-smart.vercel.app",
+    id: 6,
+    title: "DIGI Wallet",
+    desc: "A secure, role-based, and user-friendly frontend application for a Digital Wallet System — inspired by popular platforms like bKash and Nagad. This project enables Users, Agents, and Admins to perform financial operations, manage wallets, and monitor transactions through an intuitive dashboard interface",
+    image: wallet,
+    live: "https://digiwallet-front.vercel.app",
     details: "#",
     reviews: 26,
     rating: 4.7,
@@ -42,7 +76,7 @@ const projects = [
 
 const ProjectsSection = () => {
   return (
-    <section className="bg-gray-50 dark:bg-gray-900 py-16 px-6 md:px-16 transition-colors duration-500">
+    <section className="max-w-7xl mx-auto py-6  transition-colors duration-500">
       {/* Title */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -109,7 +143,7 @@ const ProjectsSection = () => {
                   </Button>
                   <Button
                     className="bg-purple-600 hover:bg-purple-700 text-white"
-                    onClick={() => window.open(project.details, "_blank")}
+                    onClick={() => window.open(project.details, "_self")}
                   >
                     <Eye className="w-4 h-4 mr-2" /> Details
                   </Button>
@@ -131,7 +165,7 @@ const ProjectsSection = () => {
         <Button
           size="lg"
           className="bg-gradient-to-r from-cyan-500 to-purple-600 text-white hover:opacity-90 transition-all rounded-full px-8 py-6 text-lg"
-          onClick={() => window.open("/projects", "_self")}
+          onClick={() => window.open("/solutions", "_self")}
         >
           🚀 View All Projects
         </Button>

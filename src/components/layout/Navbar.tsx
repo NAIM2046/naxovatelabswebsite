@@ -31,8 +31,8 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Services", href: "/services" },
-    { name: "Career", href: "/career" },
+    { name: "Our Solutions", href: "/solutions" },
+    
     { name: "Contact", href: "/contact" },
     { name: "About", href: "/about" },
   ];
@@ -62,7 +62,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-4 items-center">
+        <div className="hidden md:flex space-x-12 items-center">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -78,12 +78,6 @@ const Navbar = () => {
           ))}
 
           <p className="flex items-center">
-            <Button className="mx-1" variant="outline">
-              <Link href="/login">Login</Link>
-            </Button>
-            <Button className="mx-1" variant="outline" asChild>
-              <Link href="/signin">Sign Up</Link>
-            </Button>
             <ModeToggle />
           </p>
         </div>
@@ -129,22 +123,7 @@ const Navbar = () => {
                         {link.name}
                       </Link>
                     ))}
-                    <p>
-                      <Button className="mx-1 text-xs" variant="outline">
-                        <Link href="/login" onClick={() => setIsOpen(false)}>
-                          Login{" "}
-                        </Link>
-                      </Button>
-                      <Button
-                        className="mx-1 text-xs"
-                        variant="outline"
-                        asChild
-                      >
-                        <Link href="/signin" onClick={() => setIsOpen(false)}>
-                          Sign Up
-                        </Link>
-                      </Button>
-                    </p>
+                   
                   </div>
                 </SheetDescription>
               </SheetHeader>

@@ -32,11 +32,7 @@ const services = [
     desc: "Smart software solutions for schools, inventory, HR, and accounting systems — all tailored to your needs with efficiency and automation.",
     animation: softwareAnim,
   },
-  {
-    title: "Domain & Hosting Support",
-    desc: "Complete domain and hosting setup — from shared to VPS. We make your site live, secure, and lightning fast.",
-    animation: hostingAnim,
-  },
+  
   {
     title: "Business Management System",
     desc: "We design and develop complete business management systems with dashboards, analytics, and automation to help your company grow faster.",
@@ -46,7 +42,7 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section className="relative overflow-hidden py-6 px-6 md:px-16">
+    <section className="relative overflow-hidden py-6  max-w-7xl mx-auto">
       {/* Title */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
