@@ -6,7 +6,7 @@ import Footer from "@/components/layout/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "NexoVatLabs",
+  title: "NexovateLabs",
   description: "Next Innovation Lab",
   icons: {
     icon: "https://i.ibb.co.com/7tbZWLYF/nexovatelabs.jpg",
