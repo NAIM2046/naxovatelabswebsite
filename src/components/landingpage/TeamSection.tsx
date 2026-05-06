@@ -3,15 +3,27 @@
 import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Phone, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import gsap from "gsap";
+
 import jakirImg from "@/assets/images/jakir.jpeg";
 import naimImg from "@/assets/images/naim.jpeg";
 import kabirImg from "@/assets/images/kabir.jpg";
 
-const teamMembers = [
+type Member = {
+  id: number;
+  name: string;
+  role: string;
+  experience: string;
+  email: string;
+  phone: string;
+  image: any;
+  study: string;
+  linkedin: string;
+};
+
+const teamMembers: Member[] = [
   {
     id: 1,
     name: "Naim Hossain",
@@ -37,7 +49,7 @@ const teamMembers = [
   {
     id: 3,
     name: "Humaon Kabir",
-    role: "UI/UX Designer Fullstack Developer",
+    role: "UI/UX Designer & Fullstack Developer",
     experience: "2.5+ Years Experience",
     email: "humaonkabir2003@gmail.com",
     phone: "+8801743-637814",
@@ -53,93 +65,106 @@ const TeamSection = () => {
   useEffect(() => {
     if (!rocketRef.current) return;
     gsap.to(rocketRef.current, {
-      y: -8,
+      y: -6,
       repeat: -1,
       yoyo: true,
       ease: "sine.inOut",
-      duration: 1.4,
+      duration: 1.2,
     });
   }, []);
 
   return (
-    <section className="py-6 px-6 md:px-16 max-w-7xl mx-auto mb-6">
-      {/* Title */}
+    <section className="py-10 px-6 md:px-16 max-w-7xl mx-auto">
+      {/* Header */}
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-center mb-14"
+        className="text-center mb-16"
       >
-        <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-          Our Team
+        <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+          Meet Our Team
         </h2>
-        <p className="mt-3 max-w-2xl mx-auto">
-          Meet the creative minds behind NexovateLabs — passionate developers,
-          designers, and innovators building the future together.
+        <p className="mt-4 text-gray-500 max-w-2xl mx-auto">
+          The talented people behind NexovateLabs who design, build, and scale
+          modern digital products with precision.
         </p>
       </motion.div>
 
-      {/* Team Members */}
+      {/* Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
         {teamMembers.map((member, index) => (
           <motion.div
             key={member.id}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
+            transition={{ delay: index * 0.1 }}
             viewport={{ once: true }}
+            whileHover={{
+              y: -10,
+              scale: 1.03,
+            }}
+            className="[perspective:1000px]"
           >
-            <Card className="group border border-gray-800 rounded-2xl overflow-hidden hover:border-cyan-400 hover:shadow-cyan-500/30 transition-all duration-300">
-              <div className="relative w-full h-80 overflow-hidden">
+            <div className="group relative rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl overflow-hidden shadow-lg hover:shadow-cyan-500/20 transition-all duration-300">
+              {/* Gradient Border Glow */}
+              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-300 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 blur-xl"></div>
+
+              {/* Image */}
+              <div className="relative h-80 overflow-hidden">
                 <Image
                   src={member.image}
                   alt={member.name}
-                  width={400}
-                  height={350}
-                  className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500"
+                  fill
+                  className="object-cover group-hover:scale-110 transition duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               </div>
 
-              <CardContent className="p-6 text-center">
-                <h3 className="text-2xl font-bold text-cyan-400 mb-1">
+              {/* Content */}
+              <div className="relative z-10 p-6 text-center">
+                <h3 className="text-xl font-semibold text-black dark:text-white">
                   {member.name}
                 </h3>
-                <p>{member.role}</p>
-                <p>{member.study}</p>
-                <p className="text-sm mt-1">{member.experience}</p>
 
-                <div className="flex items-center justify-center gap-4 mt-4">
-                  <a href={`mailto:${member.email}`} className="hover:text-cyan-400 transition-colors">
-                    <Mail className="w-5 h-5" />
+                <p className="text-black text-sm mt-1 dark:text-white">{member.role}</p>
+
+                <p className="text-black text-sm mt-1 dark:text-white">{member.study}</p>
+
+                <p className="text-xs text-black mt-2 dark:text-white">
+                  {member.experience}
+                </p>
+
+                {/* Social */}
+                <div className="flex justify-center gap-4 mt-5 opacity-80 group-hover:opacity-100 transition">
+                  <a href={`mailto:${member.email}`}>
+                    <Mail className="w-5 h-5 hover:text-cyan-400 transition" />
                   </a>
-                  <a href={`tel:${member.phone}`} className="hover:text-cyan-400 transition-colors">
-                    <Phone className="w-5 h-5" />
+                  <a href={`tel:${member.phone}`}>
+                    <Phone className="w-5 h-5 hover:text-cyan-400 transition" />
                   </a>
-                  <a href={member.linkedin} target="_blank" className="hover:text-cyan-400 transition-colors">
-                    <Linkedin className="w-5 h-5" />
+                  <a href={member.linkedin} target="_blank">
+                    <Linkedin className="w-5 h-5 hover:text-cyan-400 transition" />
                   </a>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </motion.div>
         ))}
       </div>
 
-      {/* Join Button */}
+      {/* CTA */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="text-center mt-14"
+        className="text-center mt-5"
       >
         <Button
           size="lg"
-          className="bg-gradient-to-r from-cyan-500 to-purple-600 text-white hover:opacity-90 transition-all rounded-full px-8 py-6 text-lg"
+          className="bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-full px-10 py-6 text-lg shadow-lg hover:scale-105 transition"
           onClick={() => window.open("/contact", "_self")}
         >
-          <span ref={rocketRef} className="inline-block mr-2">
+          <span ref={rocketRef} className="mr-2 inline-block">
             🚀
           </span>
           Join Our Team

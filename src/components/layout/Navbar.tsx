@@ -32,9 +32,9 @@ const Navbar = () => {
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "Our Solutions", href: "/solutions" },
-    
     { name: "Contact", href: "/contact" },
     { name: "About", href: "/about" },
+    { name: "Start Project", href: "/get-proposal" },
   ];
 
   const isActive = (path: string) => pathname === path;
@@ -73,7 +73,7 @@ const Navbar = () => {
                   : "hover:scale-105 hover:font-semibold text-foreground"
               }`}
             >
-                {link.name}
+              {link.name}
             </Link>
           ))}
 
@@ -123,7 +123,6 @@ const Navbar = () => {
                         {link.name}
                       </Link>
                     ))}
-                   
                   </div>
                 </SheetDescription>
               </SheetHeader>
