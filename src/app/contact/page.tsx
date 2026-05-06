@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import ContactForm from "./components/ContactForm";
+import SupportContact from "@/components/layout/SupportContact";
 
 export default function Contact() {
   const fadeIn = (delay: number = 0) => ({
@@ -75,6 +76,7 @@ export default function Contact() {
         </motion.div>
 
       </div>
+      <SupportContact/>
     </div>
   );
 }
